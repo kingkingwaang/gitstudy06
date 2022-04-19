@@ -32,11 +32,11 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 public class searcher {
-	// À¯»çµµ °ªÀÌ °°À¸¸é ¼ø¼­ ºü¸¥ ¹®¼­ºÎÅÍ Á¦¸ñÃâ·Â
-	// À¯»çµµ°¡ 0ÀÌ¸é(Äõ¸®ÀÇ ¸ðµç ´Ü¾î°¡ ÇØ½Ã¸ÊÀÇ Å°¿¡ ¾øÀ» ‹š): µû·Î¸Þ½ÃÁö¸¦ Ãâ·Â
+	// ï¿½ï¿½ï¿½çµµ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	// ï¿½ï¿½ï¿½çµµï¿½ï¿½ 0ï¿½Ì¸ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½Ü¾î°¡ ï¿½Ø½Ã¸ï¿½ï¿½ï¿½ Å°ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½): ï¿½ï¿½ï¿½Î¸Þ½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 	private String input_file;
 	private String input_String;
-	private String xml_location = "C:\\Users\\ÀÌ¹ÎÈ¿\\Desktop\\opensw\\SimpleIR\\prcatie_1\\src\\prcatie_1\\collection.xml";
+	private String xml_location = "C:\\Users\\ï¿½Ì¹ï¿½È¿\\Desktop\\opensw\\SimpleIR\\prcatie_1\\src\\prcatie_1\\collection.xml";
 	
 	
 
@@ -44,7 +44,7 @@ public class searcher {
 		this.input_file = file;
 	}
 
-	public void searchIndex(String Query) throws Exception {
+	public void InnerPruduct(String Query) throws Exception {
 		input_String = Query;
 		KeywordExtractor ke = new KeywordExtractor();
 		KeywordList k1 = ke.extractKeyword(input_String, true);
@@ -125,7 +125,7 @@ public class searcher {
             }
         });
  
-        // ¼ø¼­À¯Áö¸¦ À§ÇØ LinkedHashMapÀ» »ç¿ë
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ LinkedHashMapï¿½ï¿½ ï¿½ï¿½ï¿½
         Map<String, Double> sortedMap = new LinkedHashMap<>();
         for(Iterator<Map.Entry<String, Double>> iter = list.iterator(); iter.hasNext();){
             Map.Entry<String, Double> entry = iter.next();
@@ -143,7 +143,7 @@ public class searcher {
         File dir = new File(xml_location);
         org.jsoup.nodes.Document xml = Jsoup.parse(dir, "UTF-8");
         if(resultvalue[0]==0 &&resultvalue[1]==0 && resultvalue[2]==0) {
-        	System.out.println("¸ðµç À¯»çµµ°¡ 0ÀÔ´Ï´Ù.");
+        	System.out.println("ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½çµµï¿½ï¿½ 0ï¿½Ô´Ï´ï¿½.");
         }
         else {
             for(int g = 0; g < 3; g++) {
@@ -151,6 +151,6 @@ public class searcher {
                 System.out.println(Htitle.text());
             	}
         }
-		System.out.println("5ÁÖÂ÷ ½ÇÇà¿Ï·á");
+		System.out.println("5ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï·ï¿½");
 	}
 }

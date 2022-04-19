@@ -32,19 +32,19 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 public class searcher {
-<<<<<<< HEAD
+
 	// ï¿½ï¿½ï¿½çµµ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	// ï¿½ï¿½ï¿½çµµï¿½ï¿½ 0ï¿½Ì¸ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½Ü¾î°¡ ï¿½Ø½Ã¸ï¿½ï¿½ï¿½ Å°ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½): ï¿½ï¿½ï¿½Î¸Þ½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 	private String input_file;
 	private String input_String;
 	private String xml_location = "C:\\Users\\ï¿½Ì¹ï¿½È¿\\Desktop\\opensw\\SimpleIR\\prcatie_1\\src\\prcatie_1\\collection.xml";
-=======
-	// À¯»çµµ °ªÀÌ °°À¸¸é ¼ø¼­ ºü¸¥ ¹®¼­ºÎÅÍ Á¦¸ñÃâ·Â
-	// À¯»çµµ°¡ 0ÀÌ¸é(Äõ¸®ÀÇ ¸ðµç ´Ü¾î°¡ ÇØ½Ã¸ÊÀÇ Å°¿¡ ¾øÀ» ‹š): µû·Î¸Þ½ÃÁö¸¦ Ãâ·Â
+
+	// ï¿½ï¿½ï¿½çµµ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	// ï¿½ï¿½ï¿½çµµï¿½ï¿½ 0ï¿½Ì¸ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½Ü¾î°¡ ï¿½Ø½Ã¸ï¿½ï¿½ï¿½ Å°ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½): ï¿½ï¿½ï¿½Î¸Þ½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 	private String input_file;
 	private String input_String;
-	private String xml_location = "C:\\Users\\ÀÌ¹ÎÈ¿\\Desktop\\opensw\\SimpleIR\\prcatie_1\\src\\prcatie_1\\collection.xml";
->>>>>>> hotfix
+	private String xml_location = "C:\\Users\\ï¿½Ì¹ï¿½È¿\\Desktop\\opensw\\SimpleIR\\prcatie_1\\src\\prcatie_1\\collection.xml";
+
 	
 	
 
@@ -52,11 +52,11 @@ public class searcher {
 		this.input_file = file;
 	}
 
-<<<<<<< HEAD
+
 	public void calcSim(String Query) throws Exception {
-=======
+
 	public void searchIndex(String Query) throws Exception {
->>>>>>> hotfix
+
 		input_String = Query;
 		KeywordExtractor ke = new KeywordExtractor();
 		KeywordList k1 = ke.extractKeyword(input_String, true);
@@ -98,18 +98,17 @@ public class searcher {
 		Iterator<String> it2 = selecthash.keySet().iterator();
 		Iterator<String> it3 = hashmap.keySet().iterator();
 		double[] result = new double[5];
-<<<<<<< HEAD
+
 		double[] Aw = new double[5];
 		double[] Bv = new double[5];
-=======
->>>>>>> hotfix
+
 		while (it2.hasNext()) {
 			String skey = it2.next();
 			String hkey = it3.next();
 			int hvalue = Integer.parseInt((String) hashmap.get(skey));
 			String svalue = (String) selecthash.get(skey);
 			String[] selectString = svalue.split(" ");
-<<<<<<< HEAD
+
 			int ab = 1;
 			int loop = 5;
 			for (int b = 0; b < loop; b++) {
@@ -119,20 +118,20 @@ public class searcher {
 				Aw[b] += weight * weight;
 				Bv[b] += hvalue * hvalue;
 				ab++;
-=======
+
 			
 			int loop = selectString.length - 1;
 			for (int b = 0; b < loop; b = b + 2) {
 				Double weight = Double.parseDouble(selectString[b + 2]);
 				result[b / 2] += weight * hvalue;
->>>>>>> hotfix
+
 			}
 		}
 		
 		
 		String[] resultnum = new String[3];
 		Map<String, Double> hm = new HashMap();
-<<<<<<< HEAD
+
 		for(int t = 0; t < 5; t++) {
 			System.out.println(Aw[t] + " " + Bv[t]);
 			Aw[t] = Math.sqrt(Aw[t]);
@@ -144,9 +143,8 @@ public class searcher {
 			System.out.println(result[t]);
 		}
 		System.out.println();
-=======
 
->>>>>>> hotfix
+
 		for(int f = 0; f < 5; f++) {
 			String tmp2 = Integer.toString(f);
 			hm.put(tmp2, (double) result[f]);
@@ -168,11 +166,7 @@ public class searcher {
             }
         });
  
-<<<<<<< HEAD
-        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ LinkedHashMapï¿½ï¿½ ï¿½ï¿½ï¿½
-=======
-        // ¼ø¼­À¯Áö¸¦ À§ÇØ LinkedHashMapÀ» »ç¿ë
->>>>>>> hotfix
+
         Map<String, Double> sortedMap = new LinkedHashMap<>();
         for(Iterator<Map.Entry<String, Double>> iter = list.iterator(); iter.hasNext();){
             Map.Entry<String, Double> entry = iter.next();
@@ -184,20 +178,19 @@ public class searcher {
         for(int c = 0; c< 3; c++) {
         	resultnum[c] = it4.next();
         	resultvalue[c] = sortedMap.get(resultnum[c]);
-<<<<<<< HEAD
-=======
+
         	System.out.println(resultvalue[c]);
->>>>>>> hotfix
+
         }
         
         File dir = new File(xml_location);
         org.jsoup.nodes.Document xml = Jsoup.parse(dir, "UTF-8");
         if(resultvalue[0]==0 &&resultvalue[1]==0 && resultvalue[2]==0) {
-<<<<<<< HEAD
+
         	System.out.println("ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½çµµï¿½ï¿½ 0ï¿½Ô´Ï´ï¿½.");
-=======
-        	System.out.println("¸ðµç À¯»çµµ°¡ 0ÀÔ´Ï´Ù.");
->>>>>>> hotfix
+
+        	System.out.println("ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½çµµï¿½ï¿½ 0ï¿½Ô´Ï´ï¿½.");
+
         }
         else {
             for(int g = 0; g < 3; g++) {
@@ -205,10 +198,10 @@ public class searcher {
                 System.out.println(Htitle.text());
             	}
         }
-<<<<<<< HEAD
+
 		System.out.println("5ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï·ï¿½");
-=======
-		System.out.println("5ÁÖÂ÷ ½ÇÇà¿Ï·á");
->>>>>>> hotfix
+
+		System.out.println("5ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï·ï¿½");
+
 	}
 }

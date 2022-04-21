@@ -44,10 +44,14 @@ public class searcher {
 		this.input_file = file;
 	}
 
+<<<<<<< HEAD
 
 	public void calcSim(String Query) throws Exception {
 
 
+=======
+	public void searchIndex(String Query) throws Exception {
+>>>>>>> ff
 		input_String = Query;
 		KeywordExtractor ke = new KeywordExtractor();
 		KeywordList k1 = ke.extractKeyword(input_String, true);
@@ -89,14 +93,18 @@ public class searcher {
 		Iterator<String> it2 = selecthash.keySet().iterator();
 		Iterator<String> it3 = hashmap.keySet().iterator();
 		double[] result = new double[5];
+<<<<<<< HEAD
 		double[] Aw = new double[5];
 		double[] Bv = new double[5];
+=======
+>>>>>>> ff
 		while (it2.hasNext()) {
 			String skey = it2.next();
 			String hkey = it3.next();
 			int hvalue = Integer.parseInt((String) hashmap.get(skey));
 			String svalue = (String) selecthash.get(skey);
 			String[] selectString = svalue.split(" ");
+<<<<<<< HEAD
 			int ab = 1;
 			int loop = 5;
 			for (int b = 0; b < loop; b++) {
@@ -123,6 +131,20 @@ public class searcher {
 			System.out.println(result[t]);
 		}
 		System.out.println();
+=======
+			
+			int loop = selectString.length - 1;
+			for (int b = 0; b < loop; b = b + 2) {
+				Double weight = Double.parseDouble(selectString[b + 2]);
+				result[b / 2] += weight * hvalue;
+			}
+		}
+		//asd
+		
+		String[] resultnum = new String[3];
+		Map<String, Double> hm = new HashMap();
+
+>>>>>>> ff
 		for(int f = 0; f < 5; f++) {
 			String tmp2 = Integer.toString(f);
 			hm.put(tmp2, (double) result[f]);
@@ -156,6 +178,10 @@ public class searcher {
         for(int c = 0; c< 3; c++) {
         	resultnum[c] = it4.next();
         	resultvalue[c] = sortedMap.get(resultnum[c]);
+<<<<<<< HEAD
+=======
+        	System.out.println(resultvalue[c]);
+>>>>>>> ff
         }
         
         File dir = new File(xml_location);
